@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Home Page</title>
+</head>
+<body>
+    <h1>Welcome to the Flask App</h1>
+    {% if role == 'student' %}
+        <a href="/upload">Upload Image</a>
+        <a href="/my_images">View My Images</a> <!-- Link to view uploaded images and feedback -->
+    {% elif role == 'doctor' %}
+        <a href="/view_images">View Uploaded Images</a>
+    {% endif %}
+    <a href="/logout">Logout</a>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Images</title>
+</head>
+<body>
+    <h1>My Uploaded Images</h1>
+    {% for filename, feedback in images_feedback %}
+        <div>
+            <img src="{{ url_for('uploaded_file', filename=filename) }}" alt="Uploaded Image" style="width: 200px; height: auto;">
+            <p><strong>Feedback:</strong> {{ feedback }}</p>
+        </div>
+    {% endfor %}
+    <a href="/">Back to Home</a>
+</body>
+</html>

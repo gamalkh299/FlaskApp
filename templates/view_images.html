@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Images</title>
+</head>
+<body>
+    <h1>Images Uploaded by Students</h1>
+    {% for url in image_urls %}
+        <div>
+            <img src="{{ url }}" alt="Uploaded Image" style="width: 200px; height: auto;">
+            <p>Image URL: <a href="{{ url }}">{{ url }}</a></p>
+            <a href="{{ url_for('feedback', filename=url.split('/')[-1]) }}">Provide Feedback</a>
+        </div>
+    {% endfor %}
+    <a href="/index">Back to Home</a>
+</body>
+</html>
+
